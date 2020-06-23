@@ -22,11 +22,39 @@ def examen_menu_acctions(seted_test,opcion):
 	elif opcion == 5:
 		check_answers(seted_test)
 	elif opcion == 6:
-		
+		update_question_status(seted_test)
 	elif opcion == 7:
-		pass
+		print("regresando menu principal...")
 	else:
-		pass
+		print(f"Opcion {opcion} no valida")
+
+def add_questions_to_test(seted_test):
+	question = ""
+	while (not (question == "fin")):
+		question = input("Pregunta: ")
+		if (not(question  == "fin")):
+			aswer = input("Respuesta: ")
+			seted_test.add_question(question,aswer)
+		else:
+			print(":D")
+
+def check_answers(seted_test):
+	opcion = ""
+	while (opcion != -1 ):
+		no_questions = seted_test.show_questions()
+		opcion = int(input(": "))
+		if (opcion >= 0 and opcion < no_questions):
+			seted_test.see_answer(opcion)
+
+
+
+def update_question_status(seted_test):
+	opcion = ""
+	while (opcion != -1 ):
+		no_questions = seted_test.show_questions()
+		opcion = int(input(": "))
+		if (opcion > 0 and opcion < no_questions):
+			seted_test.set_answer_stats(opcion)
 
 	
 def examen_menu(seted_test):
