@@ -1,3 +1,0 @@
-pregunta 1,respuesta 1,True,
-pregunta 2,respuesta 2,True,
-pregunta 3,respuesta 3,True,
